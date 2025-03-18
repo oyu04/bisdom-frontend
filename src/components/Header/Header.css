@@ -1,0 +1,115 @@
+.box {
+  height: 60px;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 5vw;
+}
+
+.box .rectangle {
+  background-color: #ffffff;
+  box-shadow: 0px 4px 4px #00000040;
+  height: 60px;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 0; /* rectangle�����ɔz�u */
+}
+
+.image {
+  height: 53px;
+  width: 131px;
+}
+
+.image .element {
+  height: 42.4px;
+  left: 0;
+  object-fit: cover;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  width: 104.8px;
+  margin: 5px;
+  margin-top: 8px;
+}
+
+.search {
+  height: 53px; /* 検索エリア全体の高さ */
+  width: 650px;
+  position: fixed; /* 固定位置に配置 */
+  top: 1%; /* 上から1%の位置 */
+  left: 50%; /* 横幅の中央に配置 */
+  transform: translateX(-50%); /* 横方向の中央揃えを調整 */
+  z-index: 10; /* 前面に表示 */
+}
+
+.search .search-box {
+  background-color: #f2f3ff;
+  border-radius: 8px;
+  height: 36px;
+  width: 100%; /* ボックスの幅を100%に設定 */
+  margin-top: 5px;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  width: 550px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-left: 40px;
+}
+
+.search-lens {
+  height: 30px;
+  width: 30px;
+}
+
+.search-lens .element {
+  height: 15px;
+  left: 2%;
+  object-fit: cover;
+  position: fixed;
+  top: 15%;
+  width: 15px;
+  margin-top: 7px;
+}
+
+.search-mixer {
+  height: 30px;
+  width: 30px;
+}
+
+.search-mixer .element {
+  height: 15px;
+  left: 95%;
+  object-fit: cover;
+  position: fixed;
+  top: 15%;
+  width: 15px;
+  margin-top: 7px;
+}
+
+.user {
+  z-index: 1;
+  border-radius: 99%;
+  height: 50px;
+  width: 50px;
+}
+
+.user .element {
+  background-color: #d9d9d9;
+  border-radius: 25px;
+  width: 40px;
+  height: 40px;
+  left: 95%;
+  object-fit: cover;
+  position: fixed;
+  top: 5px;
+  margin: 5px;
+}
