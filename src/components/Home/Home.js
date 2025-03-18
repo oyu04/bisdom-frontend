@@ -16,28 +16,6 @@ function Home() {
     setActiveTab(tab);
   };
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch("http://127.0.0.1:8080/", {
-        method: 'GET',
-        headers:{
-          'Authorization':'Bearer ' + authToken,
-          'Content-Type': 'application/json',
-        }
-      });
-      if (!response.ok) {
-        throw new Error("Network response was not ok");
-      }
-
-      // レスポンスがJSONである場合
-      const data = await response.text();
-      console.log("Fetched data:", data); // コンソールにデータを表示
-      setMessage(data ? JSON.stringify(data) : "No data available"); // dataが空の場合、デフォルトメッセージを設定
-
-    } catch (error) {
-      console.error("Fetch error: ", error);
-    }
-  };
 
   const fetchKnowledgeData = async () => {
     try {
@@ -69,9 +47,31 @@ function Home() {
   };
 
   // コンポーネントがマウントされたときにデータをフェッチする
-  useEffect(() => {
+  useEffect(() => {    
+    const fetchData = async () => {
+      try {
+        const response = await fetch("http://127.0.0.1:8080/", {
+          method: 'GET',
+          headers:{
+            'Authorization':'Bearer ' + authToken,
+            'Content-Type': 'application/json',
+          }
+        });
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+
+        // レスポンスがJSONである場合
+        const data = await response.text();
+        console.log("Fetched data:", data); // コンソールにデータを表示
+        setMessage(data ? JSON.stringify(data) : "No data available"); // dataが空の場合、デフォルトメッセージを設定
+
+      } catch (error) {
+        console.error("Fetch error: ", error);
+      }
+    };
     fetchData();
-  }, [fetchData]); 
+  }, []); 
 
   useEffect(() => {
     if (activeTab === "timeline") {

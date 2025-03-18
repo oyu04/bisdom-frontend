@@ -7,7 +7,7 @@ import apiRequest from '../Request-manage/request'; // apiRequestをインポー
 // ┗不具合解決時に本コメントアウトを削除する。
 
 function Knowledge_Detail() {
-    const demoData = {
+    const demoData = useMemo(() => ({
         id: 'demo-1',
         title: 'デモナレッジ',
         tags: 'デモ, サンプル, テスト',
@@ -17,7 +17,7 @@ function Knowledge_Detail() {
         update_at: '2025-03-14',
         content: '<p>これはデモのナレッジ詳細です。実際のデータが取得できない場合に表示されます。</p>',
         image_path: 'デモの補足情報です'
-    };
+    }), []); // 依存配列が空なので、最初のレンダリング時にのみ計算される    
 
     const [knowledgeData, setKnowledgeData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
