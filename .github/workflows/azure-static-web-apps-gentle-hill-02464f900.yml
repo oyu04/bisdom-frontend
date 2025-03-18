@@ -32,10 +32,10 @@ jobs:
                const coredemo = require('@actions/core')
                return await coredemo.getIDToken()
            result-encoding: string
-      - name: Set up Node.js (v18.x)
+      - name: Set up Node.js (v20.x)
         uses: actions/setup-node@v3
         with:
-          node-version: "20" # Node.js v18‚ðŽw’è
+          node-version: "20"
       - name: Install dependencies
         run: npm install
       - name: Build And Deploy
