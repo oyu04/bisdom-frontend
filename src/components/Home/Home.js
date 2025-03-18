@@ -71,8 +71,8 @@ function Home() {
   // コンポーネントがマウントされたときにデータをフェッチする
   useEffect(() => {
     fetchData();
-  }, [fetchData]); 
-  
+  }, []); 
+
   useEffect(() => {
     if (activeTab === "timeline") {
       fetchKnowledgeData();

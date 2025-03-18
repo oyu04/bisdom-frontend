@@ -77,7 +77,7 @@ function Knowledge_Detail() {
         };
     
         fetchAndUpdateKnowledge();
-    }, [location.state, demoData, viewCountUpdated]);  // demoDataとviewCountUpdatedを依存配列に追加    
+    }, [location.state]);  // demoDataとviewCountUpdatedを依存配列に追加    
 
     useEffect(() => {
         const measureHeight = () => {
