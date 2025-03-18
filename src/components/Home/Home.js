@@ -71,7 +71,7 @@ function Home() {
       }
     };
     fetchData();
-  }, []); 
+  }, [authToken, setMessage]); 
 
   useEffect(() => {
     if (activeTab === "timeline") {
