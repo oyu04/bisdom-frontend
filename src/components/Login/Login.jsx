@@ -69,7 +69,7 @@ border-radius:0.5rem;}
 `
 
 const Login = () => {
-    const {isAuthenticated, login, logout} = useAuth();
+    const {isAuthenticated, login} = useAuth();
     const navigate = useNavigate();
     
     // 認証状態が変わったときにリダイレクトする

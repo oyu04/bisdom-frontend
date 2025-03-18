@@ -19,7 +19,6 @@ function Knowledge_Detail() {
         image_path: 'デモの補足情報です'
     };
 
-    const [setActiveTab] = useState("timeline");
     const [knowledgeData, setKnowledgeData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [viewCountUpdated, setViewCountUpdated] = useState(false);  // 追加
@@ -77,7 +76,7 @@ function Knowledge_Detail() {
         };
     
         fetchAndUpdateKnowledge();
-    }, [location.state]);  // demoDataとviewCountUpdatedを依存配列に追加    
+    }, [location.state, demoData, viewCountUpdated]);  // demoDataとviewCountUpdatedを依存配列に追加    
 
     useEffect(() => {
         const measureHeight = () => {
