@@ -8,7 +8,7 @@ function Home() {
   // 現在選択されているタブを管理
   const [activeTab, setActiveTab] = useState("timeline");
   // messageをuseStateで管理
-  const [message, setMessage] = useState(""); 
+  const [setMessage] = useState(""); 
   const [knowledgeData, setKnowledgeData] = useState([]);
   const authToken = localStorage.getItem("authToken");
   // タブ切り替え関数
@@ -16,33 +16,6 @@ function Home() {
     setActiveTab(tab);
   };
 
-  // dummy data
-  const dummy_data = [
-    {
-      id: 1,
-      userName: "ユーザー1",
-      timestamp: "2025-03-11 20:41",
-      title: "タイトル1",
-      tab: "タブ1",
-      likes: 10,
-    },
-    {
-      id: 2,
-      userName: "ユーザー2",
-      timestamp: "2025-03-11 21:00",
-      title: "タイトル2",
-      tab: "タブ2",
-      likes: 20,
-    },
-    {
-      id: 2,
-      userName: "ユーザー2",
-      timestamp: "2025-03-11 21:00",
-      title: "タイトル2",
-      tab: "タブ2",
-      likes: 20,
-    },
-  ];
   const fetchData = async () => {
     try {
       const response = await fetch("http://127.0.0.1:8080/", {
@@ -98,8 +71,8 @@ function Home() {
   // コンポーネントがマウントされたときにデータをフェッチする
   useEffect(() => {
     fetchData();
-  }, []);  // 空の依存配列で初回レンダリング時のみ実行
-
+  }, [fetchData]); 
+  
   useEffect(() => {
     if (activeTab === "timeline") {
       fetchKnowledgeData();

@@ -19,7 +19,7 @@ function Knowledge_Detail() {
         image_path: 'デモの補足情報です'
     };
 
-    const [activeTab, setActiveTab] = useState("timeline");
+    const [setActiveTab] = useState("timeline");
     const [knowledgeData, setKnowledgeData] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [viewCountUpdated, setViewCountUpdated] = useState(false);  // 追加
@@ -27,28 +27,10 @@ function Knowledge_Detail() {
     const navigate = useNavigate();  // 追加
     const containerRef = useRef(null);
 
-    // タブ切り替え関数
-    const handleTabChange = (tab) => {
-        setActiveTab(tab);
-    };
-
-    const fetchKnowledgeData = async () => {
-        try {
-            const response = await apiRequest.get('/knowledge/get/meisai', {
-                keyword: '1',
-                searchType: 'id'
-            });
-            setKnowledgeData(response.data);
-            console.log(response.data);
-        } catch (error) {
-            console.error("Error fetching knowledge data:", error);
-        }
-    };
-
     // ビューカウントを増やす関数
     const incrementViewCount = async (knowledgeId) => {
         try {
-            const response = await apiRequest.put(`/knowledge/viewcount/${knowledgeId}`);
+            await apiRequest.put(`/knowledge/viewcount/${knowledgeId}`);
             console.log('ビューカウントを更新しました');
         } catch (error) {
             console.error('Error updating view count:', error);
@@ -76,7 +58,7 @@ function Knowledge_Detail() {
                         setKnowledgeData(data);
                     }
                 }
-
+    
                 // ビューカウントの更新は実データの場合のみ行う
                 if (!viewCountUpdated && data && data.id !== 'demo-1') {
                     const id = Array.isArray(data) ? data[0]?.id : data.id;
@@ -93,9 +75,9 @@ function Knowledge_Detail() {
                 setIsLoading(false);
             }
         };
-
+    
         fetchAndUpdateKnowledge();
-    }, [location.state]); 
+    }, [location.state, demoData, viewCountUpdated]);  // demoDataとviewCountUpdatedを依存配列に追加    
 
     useEffect(() => {
         const measureHeight = () => {

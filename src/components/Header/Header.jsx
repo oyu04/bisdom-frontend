@@ -5,7 +5,6 @@ import './Header.css';
 import x1 from '../../assets/image/logo.png';
 import x2 from '../../assets/image/search-lens.png';
 import x3 from '../../assets/image/mixer.png';
-import x4 from '../../assets/image/user.png';
 import UserAvatar from '../Avatar/Avatar';
 import { apiRequest } from '../Request-manage/request';
 import SearchMixer from './SearchMixer';

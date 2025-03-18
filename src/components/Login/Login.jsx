@@ -45,19 +45,6 @@ width:11rem;
 font-size:1.1rem;
 background-color:${buttonColor}56;}
 `
-const BaseLogoBackground = styled.div`
-width:500vw;
-height:500vh;
-background-size:12rem;
-top:0;
-left:0;
-position:fixed;
-background-image:url(${x1});
-background-repeat:repeat;
-background-position:center;
-transform:rotate(45deg) translateX(-700px) translateY(200px);
-transform-origin:center;
-`
 const Wrapper = styled.div`
 width:40vw;
 height:40vh;
@@ -94,7 +81,7 @@ const Login = () => {
 
     const [id, setId] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+    const [setError] = useState("");
 
     // ログイン処理
     const handleLogin = async () => {
@@ -113,12 +100,6 @@ const Login = () => {
             setError("Invalid username or password."); // エラーメッセージを設定
             console.error("Login error", err);
         }
-    };
-
-    // ログアウト処理
-    const handleLogout = () => {
-        logout(); // 認証状態を更新
-        navigate("/login"); // ログインページにリダイレクト
     };
 
     return (

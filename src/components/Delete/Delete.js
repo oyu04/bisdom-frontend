@@ -4,7 +4,7 @@ import "./Delete.css";
 import { apiRequest } from "../Request-manage/request";
 
 function Delete() {
-  const [message, setMessage] = useState("");
+  const [message] = useState("");
   const [items, setItems] = useState([]);
   const navigate = useNavigate();
 

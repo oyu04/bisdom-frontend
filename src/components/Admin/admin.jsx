@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./admin.css";
 
 const Admin = () => {
-  const [knowledgeItems, setKnowledgeItems] = useState([
+  const [knowledgeItems] = useState([
     { id: 1, title: "ナレッジ1", content: "内容1" },
     { id: 2, title: "ナレッジ2", content: "内容2" },
     { id: 3, title: "ナレッジ3", content: "内容3" }

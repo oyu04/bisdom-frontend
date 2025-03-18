@@ -1,16 +1,12 @@
-import styled from "styled-components";
 import x1 from "../../assets/image/icon.png";
-import x2 from "../../assets/image/search-lens.png";
-import { useState } from "react";
 import * as Avatar from "@radix-ui/react-avatar";
 import * as HoverCard from "@radix-ui/react-hover-card";
 import { StyledButton } from "../Login/Login";
 import { useAuth } from "../Auth/AuthContext";
 import { useNavigate } from "react-router-dom";
-const ContextMenu = styled.div`
-${(props) => (props.isToggled && "display:none")}
+`${(props) => (props.isToggled && "display:none")}`
+
 `
-const ContextMenuItem = styled.div`
 display:grid;
 flex-direction:column;
 height:10rem;
@@ -20,18 +16,6 @@ width:10rem;
 height:10rem;
 border-radius:10rem;}
 `;
-const ContextMenuItemIcon = styled.img`
-background-color:blue;`;
-const ContextMenuItemDetail = styled.div`
-width:10rem;
-background-color:red`;
-const Wrapper = styled.div`
-img{
-width:50px;
-height:50px;
-z-index:100000;}`;
-const IconUrl = [x2, x2, x2]
-const DetailContents = ["適当", "適当", "適当"]
 
 const UserAvatar = () => {
     const {logout} = useAuth();
