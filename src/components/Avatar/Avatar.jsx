@@ -66,24 +66,13 @@ const UserAvatar = () => {
 		<HoverCard.Portal>
 			<HoverCard.Content className="HoverCardContent" sideOffset={5} style={{background:"#9f9f9f88",height:400,width:220}}>
 				<div style={{ display: "flex", flexDirection: "column", gap: 7 }}>
-                <StyledButton onClick={handleLogout}>ログアウト</StyledButton>
-					<div style={{ display: "flex", flexDirection: "column", gap: 15 }}>
-						<div>
-							<div className="Text bold"><StyledButton onClick={handleLogout}>ログアウト</StyledButton></div>
-							<div className="Text faded"><StyledButton onClick={handleLogout}>ログアウト</StyledButton></div>
-						</div>
-						<div className="Text">
-                        <StyledButton onClick={handleLogout}>ログアウト</StyledButton>						</div>
-						<div style={{ display: "flex", gap: 15 }}>
-							<div style={{ display: "flex", gap: 5 }}>
-								<div className="Text bold"><StyledButton onClick={handleLogout}>ログアウト</StyledButton></div>{" "}
-							</div>
-							
-						</div>
-					</div>
+					<StyledButton onClick={handleLogout}>ログアウト</StyledButton>
+					<StyledButton onClick={() => window.open("https://forms.office.com/Pages/ResponsePage.aspx?id=xN1NfrvqJE6KADNH5VQVUhQUBqlXL5lItASR6F_g2EhURFQwSVo4VTlHSkdRTUZHNlBSWkpFNlhaWi4u", "_blank", "noopener")}>
+						問い合わせ
+					</StyledButton>
+					{/* 問い合わせフォームの回答結果は以下より確認できる */}
+					{/* https://forms.office.com/Pages/DesignPageV2.aspx?subpage=design&FormId=xN1NfrvqJE6KADNH5VQVUhQUBqlXL5lItASR6F_g2EhURFQwSVo4VTlHSkdRTUZHNlBSWkpFNlhaWi4u&Token=fa1069e4f4a146fb9f07e1b15bdefc17 */}
 				</div>
-
-				<HoverCard.Arrow className="HoverCardArrow" />
 			</HoverCard.Content>
 		</HoverCard.Portal>
 	</HoverCard.Root>

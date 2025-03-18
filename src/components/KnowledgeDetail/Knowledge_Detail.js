@@ -129,7 +129,6 @@ function Knowledge_Detail() {
         return <div>Loading...</div>;
     }
 
-    // fetch("http://127.0.0.1:8080/knowledge/get/meisai?knowledge_id=1");
     const displayData = Array.isArray(knowledgeData) ? knowledgeData[0] : knowledgeData;
 
     if (!displayData) {

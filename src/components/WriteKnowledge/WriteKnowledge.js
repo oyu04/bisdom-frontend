@@ -94,6 +94,7 @@ function WriteKnowledge() {
 
             if (response.status === 200) {
                 alert(isUpdateMode ? 'ナレッジを更新しました。' : 'ナレッジを投稿しました。');
+                navigate('/');
             }
         } catch (error) {
             console.error(isUpdateMode ? '更新エラー:' : '投稿エラー:', error);

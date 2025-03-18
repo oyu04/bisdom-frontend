@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // API のベースURL（環境変数などで変更可能）
-const BASE_URL = process.env.REACT_APP_API_URL || 'https://bisdom-system-agedcqcngvhkfbh8.japaneast-01.azurewebsites.net';
+const BASE_URL = process.env.REACT_APP_API_URL || 'https://bisdom-system-agedcqcngvhkfbh8.japaneast-01.azurewebsites.net/';
 
 // axios のインスタンスを作成
 const apiClient = axios.create({
