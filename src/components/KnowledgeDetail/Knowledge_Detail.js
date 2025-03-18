@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react"; // useRefを追加
+import React, { useState, useEffect, useRef, useMemo } from "react"; // useRefを追加
 import { useLocation, useNavigate } from 'react-router-dom';  // useNavigateを追加
 import "./Knowledge_Detail.css";
 import apiRequest from '../Request-manage/request'; // apiRequestをインポート
